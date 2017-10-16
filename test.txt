@@ -1,0 +1,19 @@
+use admin
+db.createUser(
+  {
+    user: "admin",
+    pwd: "1234",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+
+use imooc1
+db.createUser(
+  {
+    user: "imooc1",
+    pwd: "1234",
+    roles: [ { role: "readWrite", db: "imooc1" },
+             { role: "read", db: "reporting" } ]
+  }
+)
